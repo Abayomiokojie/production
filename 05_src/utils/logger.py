@@ -1,7 +1,7 @@
 import logging
 from datetime import datetime
 
-from dotenv import load_dotenv
+from dotenv.main import load_dotenv
 import os
 
 load_dotenv()
