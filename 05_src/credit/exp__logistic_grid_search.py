@@ -21,7 +21,7 @@ from utils.logger import get_logger
 mlflow.set_tracking_uri("http://localhost:5001")
 
 load_dotenv(override=True)
-CREDIT_FILE = os.getenv("CREDIT_DATA")
+CREDIT_FILE = os.getenv("CREDIT_DATA", './data/credit/cs-training.csv')
 MLFLOW_URI = os.getenv("MLFLOW_TRACKING_URI")
 
 _logs = get_logger(__name__)

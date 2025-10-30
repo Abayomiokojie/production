@@ -1,12 +1,18 @@
 
 import pandas as pd
 import os
+import sys
+
+# Adds the parent directory (05_src) to the system path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from dotenv import load_dotenv
 from utils.logger import get_logger
 
+
+
 load_dotenv()
-CREDIT_FILE = os.getenv("CREDIT_DATA")
+CREDIT_FILE = os.getenv("CREDIT_DATA", './data/credit/cs-training.csv')
 MLFLOW_URI = os.getenv("MLFLOW_TRACKING_URI")
 
 _logs = get_logger(__name__)
